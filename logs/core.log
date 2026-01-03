@@ -1,0 +1,157 @@
+2026-01-02 05:30:23 | INFO | CoreApp | Start time: 2026-01-02 02:30:23
+2026-01-02 05:30:24 | INFO | CoreApp | Telegram started
+2026-01-02 05:30:24 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:30:24 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:30:24 | INFO | CoreApp | Spec stream started
+2026-01-02 05:30:24 | INFO | CoreApp | Spec stream started
+2026-01-02 05:30:24 | INFO | CoreApp | Instruments loaded
+2026-01-02 05:30:24 | INFO | CoreApp | Master supervisor started
+2026-01-02 05:30:24 | INFO | CoreApp | [FSM] Master supervisor started
+2026-01-02 05:30:28 | INFO | CoreApp | [CopyState:1] activate_copy
+2026-01-02 05:30:28 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:30:28 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:30:28 | INFO | CoreApp | [CopyState:1] READY
+2026-01-02 05:30:33 | INFO | CoreApp | [FSM] RELOAD MASTER STREAM
+2026-01-02 05:30:33 | INFO | CoreApp | MasterSignalStream: WS connected
+2026-01-02 05:30:33 | INFO | CoreApp | MasterSignalStream: WS login success
+2026-01-02 05:30:33 | INFO | CoreApp | [FSM] Master WS ready
+2026-01-02 05:30:33 | INFO | CoreApp | CopyDestrib: payload attached
+2026-01-02 05:30:33 | INFO | CoreApp | [FSM] ENTER RUNNING
+2026-01-02 05:30:33 | INFO | CoreApp | MasterPayload READY
+2026-01-02 05:30:33 | INFO | CoreApp | CopyDestrib: signal_loop STARTED
+2026-01-02 05:30:33 | INFO | CoreApp | CopyDestrib: READY
+2026-01-02 05:32:02 | INFO | CoreApp | CoreApp shutdown started
+2026-01-02 05:32:02 | INFO | CoreApp | CopyDestrib: stop_signal_loop()
+2026-01-02 05:32:02 | INFO | CoreApp | [CopyState:1] shutdown_runtime
+2026-01-02 05:32:02 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:32:02 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:32:02 | INFO | CoreApp | [CopyState:1] runtime destroyed
+2026-01-02 05:32:02 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:32:02 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:32:02 | INFO | CoreApp | CoreApp stopped cleanly
+2026-01-02 05:32:02 | INFO | CoreApp | CopyDestrib: signal_loop FINISHED
+2026-01-02 05:34:34 | INFO | CoreApp | Start time: 2026-01-02 02:34:34
+2026-01-02 05:34:35 | INFO | CoreApp | Telegram started
+2026-01-02 05:34:35 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:34:35 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:34:35 | INFO | CoreApp | Spec stream started
+2026-01-02 05:34:35 | INFO | CoreApp | Spec stream started
+2026-01-02 05:34:36 | INFO | CoreApp | Instruments loaded
+2026-01-02 05:34:36 | INFO | CoreApp | Master supervisor started
+2026-01-02 05:34:36 | INFO | CoreApp | [FSM] Master supervisor started
+2026-01-02 05:34:41 | INFO | CoreApp | [CopyState:1] activate_copy
+2026-01-02 05:34:41 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:34:41 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:34:41 | INFO | CoreApp | [CopyState:1] READY
+2026-01-02 05:34:47 | INFO | CoreApp | [CopyState:1] already READY
+2026-01-02 05:34:50 | INFO | CoreApp | [FSM] RELOAD MASTER STREAM
+2026-01-02 05:34:51 | INFO | CoreApp | MasterSignalStream: WS connected
+2026-01-02 05:34:51 | INFO | CoreApp | MasterSignalStream: WS login success
+2026-01-02 05:34:51 | INFO | CoreApp | [FSM] Master WS ready
+2026-01-02 05:34:51 | INFO | CoreApp | CopyDestrib: payload attached
+2026-01-02 05:34:51 | INFO | CoreApp | [FSM] ENTER RUNNING
+2026-01-02 05:34:51 | INFO | CoreApp | MasterPayload READY
+2026-01-02 05:34:51 | INFO | CoreApp | CopyDestrib: signal_loop STARTED
+2026-01-02 05:34:51 | INFO | CoreApp | CopyDestrib: READY
+2026-01-02 05:35:41 | INFO | CoreApp | CoreApp shutdown started
+2026-01-02 05:35:41 | INFO | CoreApp | CopyDestrib: stop_signal_loop()
+2026-01-02 05:35:41 | INFO | CoreApp | [CopyState:1] shutdown_runtime
+2026-01-02 05:35:41 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:35:41 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:35:41 | INFO | CoreApp | [CopyState:1] runtime destroyed
+2026-01-02 05:35:41 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:35:41 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:35:41 | INFO | CoreApp | CoreApp stopped cleanly
+2026-01-02 05:35:41 | INFO | CoreApp | CopyDestrib: signal_loop FINISHED
+2026-01-02 05:42:30 | INFO | CoreApp | Start time: 2026-01-02 02:42:30
+2026-01-02 05:42:30 | INFO | CoreApp | Telegram started
+2026-01-02 05:42:30 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:42:30 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:42:30 | INFO | CoreApp | Spec stream started
+2026-01-02 05:42:30 | INFO | CoreApp | Spec stream started
+2026-01-02 05:42:31 | INFO | CoreApp | Instruments loaded
+2026-01-02 05:42:31 | INFO | CoreApp | Master supervisor started
+2026-01-02 05:42:31 | INFO | CoreApp | [FSM] Master supervisor started
+2026-01-02 05:42:38 | INFO | CoreApp | [CopyState:1] activate_copy
+2026-01-02 05:42:38 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:42:38 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:42:38 | INFO | CoreApp | [CopyState:1] READY
+2026-01-02 05:42:41 | INFO | CoreApp | [FSM] RELOAD MASTER STREAM
+2026-01-02 05:42:42 | INFO | CoreApp | MasterSignalStream: WS connected
+2026-01-02 05:42:42 | INFO | CoreApp | MasterSignalStream: WS login success
+2026-01-02 05:42:42 | INFO | CoreApp | [FSM] Master WS ready
+2026-01-02 05:42:42 | INFO | CoreApp | CopyDestrib: payload attached
+2026-01-02 05:42:42 | INFO | CoreApp | [FSM] ENTER RUNNING
+2026-01-02 05:42:42 | INFO | CoreApp | MasterPayload READY
+2026-01-02 05:42:42 | INFO | CoreApp | CopyDestrib: signal_loop STARTED
+2026-01-02 05:42:42 | INFO | CoreApp | CopyDestrib: READY
+2026-01-02 05:44:02 | ERROR | CoreApp | [EXCEPTION] CopyDestrib.signal_loop -> name 'MasterEvent' is not defined
+Args:
+{'args': (), 'kwargs': {}}
+Stack:
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\c_log.py", line 146, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\copy_.py", line 373, in signal_loop
+    expanded = await self._expand_manual_close(mev)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\copy_.py", line 205, in _expand_manual_close
+    sub = MasterEvent(
+          ^^^^^^^^^^^
+NameError: name 'MasterEvent' is not defined
+
+2026-01-02 05:45:11 | INFO | CoreApp | CoreApp shutdown started
+2026-01-02 05:45:11 | INFO | CoreApp | CopyDestrib: stop_signal_loop()
+2026-01-02 05:45:11 | INFO | CoreApp | [CopyState:1] shutdown_runtime
+2026-01-02 05:45:11 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:45:11 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:45:11 | INFO | CoreApp | [CopyState:1] runtime destroyed
+2026-01-02 05:45:11 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:45:11 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:45:11 | INFO | CoreApp | CoreApp stopped cleanly
+2026-01-02 05:45:54 | INFO | CoreApp | Start time: 2026-01-02 02:45:54
+2026-01-02 05:45:55 | INFO | CoreApp | Telegram started
+2026-01-02 05:45:55 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:45:55 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:45:55 | INFO | CoreApp | Spec stream started
+2026-01-02 05:45:55 | INFO | CoreApp | Spec stream started
+2026-01-02 05:45:55 | INFO | CoreApp | Instruments loaded
+2026-01-02 05:45:55 | INFO | CoreApp | Master supervisor started
+2026-01-02 05:45:55 | INFO | CoreApp | [FSM] Master supervisor started
+2026-01-02 05:45:59 | INFO | CoreApp | [CopyState:1] activate_copy
+2026-01-02 05:45:59 | INFO | CoreApp | NetworkManager: ping loop started
+2026-01-02 05:45:59 | INFO | CoreApp | NetworkManager: session created (direct)
+2026-01-02 05:45:59 | INFO | CoreApp | [CopyState:1] READY
+2026-01-02 05:46:02 | INFO | CoreApp | [FSM] RELOAD MASTER STREAM
+2026-01-02 05:46:03 | INFO | CoreApp | MasterSignalStream: WS connected
+2026-01-02 05:46:03 | INFO | CoreApp | MasterSignalStream: WS login success
+2026-01-02 05:46:03 | INFO | CoreApp | [FSM] Master WS ready
+2026-01-02 05:46:03 | INFO | CoreApp | CopyDestrib: payload attached
+2026-01-02 05:46:03 | INFO | CoreApp | [FSM] ENTER RUNNING
+2026-01-02 05:46:03 | INFO | CoreApp | MasterPayload READY
+2026-01-02 05:46:03 | INFO | CoreApp | CopyDestrib: signal_loop STARTED
+2026-01-02 05:46:03 | INFO | CoreApp | CopyDestrib: READY
+2026-01-02 05:46:55 | ERROR | CoreApp | [CopyDestrib] execute_signal failed
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\copy_.py", line 292, in _execute_signal
+    await self._broadcast_to_copies(mev, local_monitors)
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\copy_.py", line 262, in _broadcast_to_copies
+    await asyncio.gather(*tasks, return_exceptions=False)
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\exequter_.py", line 198, in handle_copy_event
+    intent: CopyOrderIntent | None = self.intent_factory.build(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\PROGECTS\RUSLAN\023\CopyTrading\Sl_v\COPY\state_.py", line 300, in build
+    leverage = int(leverage)
+               ^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-01-02 05:50:48 | INFO | CoreApp | CoreApp shutdown started
+2026-01-02 05:50:48 | INFO | CoreApp | CopyDestrib: stop_signal_loop()
+2026-01-02 05:50:48 | INFO | CoreApp | [CopyState:1] shutdown_runtime
+2026-01-02 05:50:48 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:50:48 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:50:48 | INFO | CoreApp | [CopyState:1] runtime destroyed
+2026-01-02 05:50:48 | INFO | CoreApp | NetworkManager: ping loop stopped
+2026-01-02 05:50:48 | INFO | CoreApp | NetworkManager: session closed
+2026-01-02 05:50:48 | INFO | CoreApp | CoreApp stopped cleanly
+2026-01-02 05:50:48 | INFO | CoreApp | CopyDestrib: signal_loop FINISHED

@@ -1,0 +1,183 @@
+Руководство по установке и запуску проекта
+
+Все параметры конфигурации задаются в файле a_config.py.
+
+ЛОКАЛЬНЫЙ ЗАПУСК
+Linux / macOS:
+chmod +x run.sh
+./run.sh
+
+Windows:
+Git Bash / WSL: ./run.bat
+PowerShell / CMD: .\run.bat
+
+Остановка:
+Ctrl + C или Ctrl + Z
+
+ДЕПЛОЙ НА VPS
+
+Загрузите проект в GitHub.
+
+Купите VPS с Ubuntu 22.04/24.04, статическим IP и root-доступом.
+
+Конфигурации сервера (на основе 1 процесс = 1 пользователь)
+
+Минимальная (до ~30 пользователей, с небольшим риском перегрузки):
+6 vCPU
+6 GB RAM
+40–60 GB SSD
+
+Рекомендуемая (стабильный продакшен ~30 пользователей):
+8 vCPU
+8 GB RAM
+NVMe SSD 60–80 GB
+
+Идеальная (рост нагрузки, 50+ пользователей):
+12 vCPU
+12–16 GB RAM
+
+Вход по SSH:
+ssh root@SERVER_IP
+(введите пароль)
+
+Hostname: copyy
+ssh root@117.55.192.241
+Server IP: 117.55.192.241
+Root Password: v43W7aIBtk560NqZdG
+
+УСТАНОВКА СИСТЕМНОГО ОКРУЖЕНИЯ
+
+Обновление системы:
+apt update && apt install -y python3-pip
+
+apt update
+apt install -y git curl wget unzip build-essential python3 python3-pip python3-venv
+
+Создание swap:
+swapoff -a
+fallocate -l 4G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+free -h
+swapon --show
+df -h
+
+РАЗВЕРТЫВАНИЕ ПРОЕКТА
+
+Клонирование:
+cd /opt
+git clone https://github.com/ВАШ_РЕПО.git
+git clone https://github.com/Sonnik9/cp_trd_bot_depl/
+
+cd cp_trd_bot_depl
+
+Виртуальное окружение:
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+
+sudo nano /etc/systemd/system/cp_trd_bot_depl.service
+
+
+[Unit]
+Description=cp_trd_bot_depl Python Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/cp_trd_bot_depl
+ExecStart=/opt/cp_trd_bot_depl/venv/bin/python -u /opt/cp_trd_bot_depl/main.py
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+
+
+
+Активировать сервис:
+systemctl daemon-reload
+systemctl enable cp_trd_bot_depl
+systemctl restart cp_trd_bot_depl
+systemctl status cp_trd_bot_depl
+
+Логи:
+journalctl -u cp_trd_bot_depl -f
+
+Остановка:
+systemctl stop cp_trd_bot_depl
+systemctl disable cp_trd_bot_depl
+pkill -f "cp_trd_bot_depl/main.py"
+
+Диагностика OOM:
+dmesg -T | grep -i oom
+dmesg -T | grep -i kill
+
+
+Server Information
+
+Hostname: copyy
+Server IP: 117.55.192.241
+Root Password: v43W7aIBtk560NqZdG                     
+
+
+
+git add .
+git commit -m "add placeholder in copy_conf instade dict"
+git push origin master
+
+
+
+
+
+
+
+
+ssh root@SERVER_IP
+cd /opt/cp_trd_bot_depl
+source venv/bin/activate
+python --version     # всегда проверяй
+
+systemctl stop cp_trd_bot_depl
+
+systemctl start cp_trd_bot_depl
+
+systemctl restart cp_trd_bot_depl
+
+systemctl status cp_trd_bot_depl --no-pager
+
+journalctl -u cp_trd_bot_depl -n 100 --no-pager
+
+
+📡 ЛОГИ LIVE
+journalctl -u cp_trd_bot_depl -f
+
+🧹 ЕСЛИ СЕРВИС В ЦИКЛЕ РЕСТАРТА
+systemctl stop cp_trd_bot_depl
+journalctl -u cp_trd_bot_depl -n 200 --no-pager
+
+🔄 ПОСЛЕ ИЗМЕНЕНИЯ unit-файла
+nano /etc/systemd/system/cp_trd_bot_depl.service
+systemctl daemon-reload
+systemctl restart cp_trd_bot_depl
+
+🧪 ПРОВЕРКА ENV
+cat .env
+python - <<EOF
+import os
+print(os.getenv("TG_BOT_TOKEN"))
+EOF
+
+♻ ПЕРЕСОЗДАТЬ VENV (ЕСЛИ ЧТО-ТО СЛОМАЛОСЬ)
+deactivate
+rm -rf venv
+/root/.pyenv/versions/3.11.9/bin/python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
