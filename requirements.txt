@@ -1,11 +1,7 @@
-# requests
-# aiohttp
-# pytz
-aiogram
-# psutil
 requests
 aiohttp
+aiogram
+# aiogram==3.23.0
 pytz
 psutil
-# aiogram==3.23.0
 dotenv
