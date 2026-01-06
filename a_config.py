@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- CORE --- 
-COPY_NUMBER:          int = 30     # количество копируемых аккаунтов
+COPY_NUMBER:          int = 100     # количество копируемых аккаунтов
 BLACK_SYMBOLS:        dict = {}   # черный список монет. {"COIN_USDT",}
 IS_REPORT:            bool = True
 TG_LOG_TTL_MS:        int = 10 * 1000
