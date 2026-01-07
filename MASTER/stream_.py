@@ -27,7 +27,7 @@ if TYPE_CHECKING:
     from .state_ import SignalCache
 
 
-IS_SHOW_SIGNAL = True
+IS_SHOW_SIGNAL = False
 
 
 class MasterSignalStream:
@@ -254,7 +254,7 @@ class MasterSignalStream:
         await self._emit(symbol, side, etype, data)
 
     async def _handle_stop_order(self, data):
-        pprint("_handle_stop_order")
+        # pprint("_handle_stop_order")
         symbol = normalize_symbol(data.get("symbol"), self.quota_asset)
         side = side_from_order_side(int(data.get("side", 0)))
 

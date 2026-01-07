@@ -84,6 +84,21 @@ class CoreApp:
     # ==========================================================================
     # TELEGRAM
     # ==========================================================================
+    async def run_telegram(self):
+        while not self._stop_flag:
+            try:
+                await self.dp.start_polling(
+                    self.bot,
+                    skip_updates=True,
+                    polling_timeout=60,
+                    handle_as_tasks=True,
+                )
+            except asyncio.CancelledError:
+                raise
+            except Exception as e:
+                self.logger.exception("Telegram polling crashed", e)
+                await asyncio.sleep(2)
+
     async def init_telegram(self):
         from aiogram import Bot, Dispatcher   # 🔥 LAZY IMPORT
 
@@ -120,14 +135,17 @@ class CoreApp:
             logger=self.logger,
             proxy_url=proxy,
             stop_flag=lambda: self._stop_flag,
+            mode="simple",   # прод-режим
         )
         self.logger.wrap_object_methods(self.public_connector)
 
+        # 🔑 КЛЮЧЕВО: ЯВНО создаём сессию
+        await self.public_connector.initialize_session()
+
+        # потом уже пинг
         self.public_connector.start_ping_loop()
 
-        ok = await self.copy_state.wait_for_session(
-            connector=self.public_connector,
-        )
+        ok = await self.public_connector.wait_for_session()
         if not ok:
             raise RuntimeError("Failed to init public connector")
 
@@ -179,13 +197,14 @@ class CoreApp:
         # 1. Telegram
         await self.init_telegram()
         tg_task = asyncio.create_task(
-            self.dp.start_polling(
-                self.bot,
-                skip_updates=True,
-                polling_timeout=60,
-                handle_as_tasks=True,
-            ),
-            name="telegram",
+            self.run_telegram(), name="telegram",
+            # self.dp.start_polling(
+            #     self.bot,
+            #     skip_updates=True,
+            #     polling_timeout=60,
+            #     handle_as_tasks=True,
+            # ),
+            # name="telegram",
         )
         self.logger.info("Telegram started")
 
@@ -283,6 +302,11 @@ class CoreApp:
             await self.dp.stop_polling()
         except Exception:
             pass
+
+        # if tg_task:
+        #     tg_task.cancel()
+        #     with contextlib.suppress(asyncio.CancelledError):
+        #         await tg_task
 
         await asyncio.sleep(0)
 

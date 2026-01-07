@@ -46,24 +46,6 @@ class CopyState:
         self._init_locks: Dict[int, asyncio.Lock] = {}
 
     # ==================================================
-    # LOW-LEVEL WAIT
-    # ==================================================
-
-    async def wait_for_session(
-        self,
-        connector: NetworkManager,
-        timeout_ms: int = SESSION_TTL,
-    ) -> bool:
-        t0 = now()
-        while not self.stop_flag():
-            if connector.session:
-                return True
-            if now() - t0 > timeout_ms:
-                return False
-            await asyncio.sleep(0.01)
-        return False
-
-    # ==================================================
     # PUBLIC API
     # ==================================================
     async def activate_copy(self, cid: int) -> bool:
@@ -179,11 +161,16 @@ class CopyState:
                 stop_flag=self.stop_flag,
             )
             self.logger.wrap_object_methods(connector)
+
+            # 🔑 ЯВНО СОЗДАЁМ СЕССИЮ
+            await connector.initialize_session()
+
+            # потом уже мониторинг
             connector.start_ping_loop()
 
             rt["connector"] = connector
 
-            ok = await self.wait_for_session(connector)
+            ok = await connector.wait_for_session()
             if not ok:
                 raise RuntimeError("session timeout")
 

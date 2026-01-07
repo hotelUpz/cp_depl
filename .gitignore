@@ -1,6 +1,9 @@
-# .venv/
-# venv/
-# */.venv/
-# */venv/
-# env
-# .env
+.venv/
+venv/
+*/.venv/
+*/venv/
+env
+.env
+CREDS.txt
+__pycache__/
+*.pyc

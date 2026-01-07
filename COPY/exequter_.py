@@ -13,6 +13,7 @@ from .helpers_ import get_cid_symbol_pos, record_latency
 
 if TYPE_CHECKING:
     from c_log import UnifiedLogger
+    from b_network import NetworkManager
     from .state_ import CopyOrderIntent
     from b_context import MainContext
     from MASTER.payload_ import MasterEvent, MasterPayload
@@ -348,7 +349,7 @@ class CopyExequter:
         # --------------------------------------------------
         # CLIENT
         # --------------------------------------------------
-        client: "MexcClient" = self.mc.copy_runtime_states.get(cid, {}).get("mc_client", None)
+        client: "MexcClient" = rt.get("mc_client", None)
         if not client:
             self.logger.warning(
                 "[COPY] cid=%s ❌ MexcClient not initialized | symbol=%s side=%s method=%s event=%s",
@@ -359,6 +360,11 @@ class CopyExequter:
                 mev.event,
             )
             return
+        
+        connector: "NetworkManager" = rt.get("connector", None)
+        ok = await connector.wait_for_session()
+        if not ok:
+            return None
         
         # --------------------------------------------------
         # orders_vars
@@ -373,7 +379,7 @@ class CopyExequter:
             # --------------------------------------------------
             # CANCEL (НЕ ЧЕРЕЗ INTENT)
             # --------------------------------------------------
-            if mev.event == "canceled":
+            if mev.event == "canceled":                    
                 await self.cancel_executor_(
                     cid=cid,
                     mev=mev,
@@ -422,7 +428,7 @@ class CopyExequter:
                 return
 
             if intent.delay_ms and not mev.closed:
-                await asyncio.sleep(intent.delay_ms / 1000)
+                await asyncio.sleep(intent.delay_ms / 1000)                
 
             # --------------------------------------------------
             # CLOSE
